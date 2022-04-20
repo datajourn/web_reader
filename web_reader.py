@@ -77,9 +77,13 @@ class Web_Reader(object):
         output += "<br><h3>Links:</h3>"
 
         # Get list of product links
-        links = soup2.find_all('a', 'a-link-normal s-link-style a-text-normal')
+        # links = soup2.find_all('a', 'a-link-normal s-link-style a-text-normal')
+        # links = soup2.find_all(attrs={"title" : "product-detail"})
+        links = soup2.find_all('a', 'a-link-normal s-no-outline')
 
         for link in links:
+
+            output += "<br>" + str(link)
 
             link_href = link['href']
 
